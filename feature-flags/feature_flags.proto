@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/ekkinox/protobuf/feature-flags;feature_flags";
+
+package proto;
+
+service FeatureFlagsSidecar {
+  rpc GetFeatureFlag (FeatureFlagRequest) returns (FeatureFlagResponse) {}
+}
+
+message FeatureFlagRequest {
+  string flagName = 1;
+}
+
+message FeatureFlagResponse {
+  string flagValue = 1;
+}
